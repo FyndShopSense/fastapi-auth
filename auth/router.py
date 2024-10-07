@@ -44,7 +44,7 @@ async def create_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
             )
 
         hashed_password = await get_password_hash(user.password)
-        db_user = User(
+        db_users = User(
             full_name=user.full_name,
             email=user.email,
             hashed_password=hashed_password,
